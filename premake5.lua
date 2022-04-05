@@ -12,10 +12,21 @@ project("simile")
         "libs"
     })
 
+    links({
+        "gl",
+        "glad",
+        "glfw"
+    })
+
     files({
         "inc/**.h",
         "src/**.c"
     })
+
+    filter("system:not windows")
+        defines({
+            "NOT_WINDOWS"
+        })
 
     filter("configurations:Debug")
         defines({
@@ -42,7 +53,9 @@ project("SimileTests")
 
     links({
         "unity",
-        "simile"
+        "simile",
+        "glad",
+        "glfw"
     })
 
     files({

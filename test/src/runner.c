@@ -1,7 +1,6 @@
 #include <unity/unity.h>
 
-#include "../../inc/simile.h"
-
+#include "../inc/test_colors.h"
 #include "../inc/test_simile.h"
 
 void setUp(void) {
@@ -14,6 +13,7 @@ void tearDown(void) {
 
 int main(void) {
     UNITY_BEGIN();
-    RUN_TEST(test_hello);
+    test_simile();
+    test_colors();
     return UNITY_END();
 }
