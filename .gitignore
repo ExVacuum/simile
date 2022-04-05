@@ -1,0 +1,28 @@
+# CCLS cache
+    
+.ccls-cache/**
+
+
+# Documentation
+
+doc
+
+
+# npm-related files (mostly for language server packages)
+    
+package-lock.json
+package.json
+node_modules
+
+
+# build files
+
+bin
+obj
+
+
+# make files
+
+Makefile
+*.make
+ 
