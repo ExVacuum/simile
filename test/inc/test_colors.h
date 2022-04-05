@@ -7,6 +7,5 @@
 
 void test_colors(void);
 
-void test_colors_rainbow(void);
 
 #endif

@@ -75,35 +75,36 @@ $(function() {
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="colors_8h.html#a30e57b287b41266861ba318f091dd273">   12</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    simile_BLACK,</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    simile_RED,</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    simile_GREEN, </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    simile_YELLOW,</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    simile_BLUE,</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    simile_MAGENTA,</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    simile_CYAN,</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    simile_WHITE</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>} <a class="code hl_enumeration" href="colors_8h.html#a30e57b287b41266861ba318f091dd273">simile_TERM_COLOR</a>;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0b">   24</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0ba3ac2912f7fd17816d0c3aa5008628142">   25</a></span>    <a class="code hl_enumvalue" href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0ba3ac2912f7fd17816d0c3aa5008628142">simile_TERM_COLOR_MOD_BG</a>        = 0b01, </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_enumvalue" href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0baf0e83fd942764f26f35585844a0446ff">simile_TERM_COLOR_MOD_BRIGHT</a>    = 0b10  </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0baf0e83fd942764f26f35585844a0446ff">   27</a></span>} <a class="code hl_enumeration" href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0b">simile_TERM_COLOR_MOD</a>;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">extern</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="colors_8h.html#a4cfeb6eb535d7e4ed94ebd4ce914beea">simile_colorizeString</a>(<span class="keywordtype">char</span>* dst, <span class="keywordtype">char</span>* src, <a class="code hl_enumeration" href="colors_8h.html#a30e57b287b41266861ba318f091dd273">simile_TERM_COLOR</a> color, <a class="code hl_enumeration" href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0b">simile_TERM_COLOR_MOD</a> mod);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="acolors_8h_html_a30e57b287b41266861ba318f091dd273"><div class="ttname"><a href="colors_8h.html#a30e57b287b41266861ba318f091dd273">simile_TERM_COLOR</a></div><div class="ttdeci">simile_TERM_COLOR</div><div class="ttdoc">Available ANSI terminal colors.</div><div class="ttdef"><b>Definition:</b> colors.h:12</div></div>
-<div class="ttc" id="acolors_8h_html_a4cfeb6eb535d7e4ed94ebd4ce914beea"><div class="ttname"><a href="colors_8h.html#a4cfeb6eb535d7e4ed94ebd4ce914beea">simile_colorizeString</a></div><div class="ttdeci">char * simile_colorizeString(char *dst, char *src, simile_TERM_COLOR color, simile_TERM_COLOR_MOD mod)</div><div class="ttdoc">Colorize a string using ANSI escape codes.</div><div class="ttdef"><b>Definition:</b> colors.c:43</div></div>
-<div class="ttc" id="acolors_8h_html_a99c38cc4d6c73fd2a8264a787a630d0b"><div class="ttname"><a href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0b">simile_TERM_COLOR_MOD</a></div><div class="ttdeci">simile_TERM_COLOR_MOD</div><div class="ttdoc">Availble ANSI terminal color modifiers.</div><div class="ttdef"><b>Definition:</b> colors.h:24</div></div>
-<div class="ttc" id="acolors_8h_html_a99c38cc4d6c73fd2a8264a787a630d0ba3ac2912f7fd17816d0c3aa5008628142"><div class="ttname"><a href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0ba3ac2912f7fd17816d0c3aa5008628142">simile_TERM_COLOR_MOD_BG</a></div><div class="ttdeci">@ simile_TERM_COLOR_MOD_BG</div><div class="ttdoc">Set color background.</div><div class="ttdef"><b>Definition:</b> colors.h:25</div></div>
-<div class="ttc" id="acolors_8h_html_a99c38cc4d6c73fd2a8264a787a630d0baf0e83fd942764f26f35585844a0446ff"><div class="ttname"><a href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0baf0e83fd942764f26f35585844a0446ff">simile_TERM_COLOR_MOD_BRIGHT</a></div><div class="ttdeci">@ simile_TERM_COLOR_MOD_BRIGHT</div><div class="ttdoc">Use bright color.</div><div class="ttdef"><b>Definition:</b> colors.h:26</div></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="colors_8h.html#a30e57b287b41266861ba318f091dd273">   13</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    simile_BLACK,</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    simile_RED,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    simile_GREEN, </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    simile_YELLOW,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    simile_BLUE,</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    simile_MAGENTA,</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    simile_CYAN,</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    simile_WHITE</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>} <a class="code hl_enumeration" href="colors_8h.html#a30e57b287b41266861ba318f091dd273">simile_TERM_COLOR</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0b">   25</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0ba3ac2912f7fd17816d0c3aa5008628142">   26</a></span>    <a class="code hl_enumvalue" href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0ba3ac2912f7fd17816d0c3aa5008628142">simile_TERM_COLOR_MOD_BG</a>        = 0b01, </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_enumvalue" href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0baf0e83fd942764f26f35585844a0446ff">simile_TERM_COLOR_MOD_BRIGHT</a>    = 0b10  </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0baf0e83fd942764f26f35585844a0446ff">   28</a></span>} <a class="code hl_enumeration" href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0b">simile_TERM_COLOR_MOD</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="colors_8h.html#a4c0f402ba1d00c999a731f777a97307e">   41</a></span><span class="keyword">extern</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="colors_8h.html#a4c0f402ba1d00c999a731f777a97307e">simile_colorizeString</a>(<span class="keywordtype">char</span>* dst, <span class="keywordtype">char</span>* src, <span class="keywordtype">int</span> size, <a class="code hl_enumeration" href="colors_8h.html#a30e57b287b41266861ba318f091dd273">simile_TERM_COLOR</a> color, <a class="code hl_enumeration" href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0b">simile_TERM_COLOR_MOD</a> mod);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="acolors_8h_html_a30e57b287b41266861ba318f091dd273"><div class="ttname"><a href="colors_8h.html#a30e57b287b41266861ba318f091dd273">simile_TERM_COLOR</a></div><div class="ttdeci">simile_TERM_COLOR</div><div class="ttdoc">Available ANSI terminal colors.</div><div class="ttdef"><b>Definition:</b> colors.h:13</div></div>
+<div class="ttc" id="acolors_8h_html_a4c0f402ba1d00c999a731f777a97307e"><div class="ttname"><a href="colors_8h.html#a4c0f402ba1d00c999a731f777a97307e">simile_colorizeString</a></div><div class="ttdeci">char * simile_colorizeString(char *dst, char *src, int size, simile_TERM_COLOR color, simile_TERM_COLOR_MOD mod)</div><div class="ttdoc">Colorize a string using ANSI escape codes.</div></div>
+<div class="ttc" id="acolors_8h_html_a99c38cc4d6c73fd2a8264a787a630d0b"><div class="ttname"><a href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0b">simile_TERM_COLOR_MOD</a></div><div class="ttdeci">simile_TERM_COLOR_MOD</div><div class="ttdoc">Availble ANSI terminal color modifiers.</div><div class="ttdef"><b>Definition:</b> colors.h:25</div></div>
+<div class="ttc" id="acolors_8h_html_a99c38cc4d6c73fd2a8264a787a630d0ba3ac2912f7fd17816d0c3aa5008628142"><div class="ttname"><a href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0ba3ac2912f7fd17816d0c3aa5008628142">simile_TERM_COLOR_MOD_BG</a></div><div class="ttdeci">@ simile_TERM_COLOR_MOD_BG</div><div class="ttdoc">Set color background.</div><div class="ttdef"><b>Definition:</b> colors.h:26</div></div>
+<div class="ttc" id="acolors_8h_html_a99c38cc4d6c73fd2a8264a787a630d0baf0e83fd942764f26f35585844a0446ff"><div class="ttname"><a href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0baf0e83fd942764f26f35585844a0446ff">simile_TERM_COLOR_MOD_BRIGHT</a></div><div class="ttdeci">@ simile_TERM_COLOR_MOD_BRIGHT</div><div class="ttdoc">Use bright color.</div><div class="ttdef"><b>Definition:</b> colors.h:27</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 5 2022 17:49:09 for simile by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+Generated on Tue Apr 5 2022 18:30:06 for simile by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>

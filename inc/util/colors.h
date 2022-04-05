@@ -7,6 +7,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 /// Available ANSI terminal colors
 typedef enum {
@@ -31,11 +32,12 @@ typedef enum {
  *
  * @param[out]  dst   The destination buffer for the colorized string
  * @param[in]   src   The source buffer of the string to be colorized
+ * @param[in]   size  The size of the destination buffer
  * @param[in]   color The color to make the string
  * @param[in]   mod   A bitmask of modifiers
  *
  * @return      A pointer to the destination buffer
  */
-extern char* simile_colorizeString(char* dst, char* src, simile_TERM_COLOR color, simile_TERM_COLOR_MOD mod);
+extern char* simile_colorizeString(char* dst, char* src, int size, simile_TERM_COLOR color, simile_TERM_COLOR_MOD mod);
 
 #endif

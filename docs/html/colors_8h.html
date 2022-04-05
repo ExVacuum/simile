@@ -74,6 +74,7 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
 </div>
 <p><a href="colors_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -101,9 +102,9 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4cfeb6eb535d7e4ed94ebd4ce914beea"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="colors_8h.html#a4cfeb6eb535d7e4ed94ebd4ce914beea">simile_colorizeString</a> (char *dst, char *src, <a class="el" href="colors_8h.html#a30e57b287b41266861ba318f091dd273">simile_TERM_COLOR</a> color, <a class="el" href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0b">simile_TERM_COLOR_MOD</a> mod)</td></tr>
-<tr class="memdesc:a4cfeb6eb535d7e4ed94ebd4ce914beea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Colorize a string using ANSI escape codes.  <a href="colors_8h.html#a4cfeb6eb535d7e4ed94ebd4ce914beea">More...</a><br /></td></tr>
-<tr class="separator:a4cfeb6eb535d7e4ed94ebd4ce914beea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c0f402ba1d00c999a731f777a97307e"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="colors_8h.html#a4c0f402ba1d00c999a731f777a97307e">simile_colorizeString</a> (char *dst, char *src, int size, <a class="el" href="colors_8h.html#a30e57b287b41266861ba318f091dd273">simile_TERM_COLOR</a> color, <a class="el" href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0b">simile_TERM_COLOR_MOD</a> mod)</td></tr>
+<tr class="memdesc:a4c0f402ba1d00c999a731f777a97307e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Colorize a string using ANSI escape codes.  <a href="colors_8h.html#a4c0f402ba1d00c999a731f777a97307e">More...</a><br /></td></tr>
+<tr class="separator:a4c0f402ba1d00c999a731f777a97307e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a99c38cc4d6c73fd2a8264a787a630d0b" name="a99c38cc4d6c73fd2a8264a787a630d0b"></a>
@@ -129,8 +130,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a4cfeb6eb535d7e4ed94ebd4ce914beea" name="a4cfeb6eb535d7e4ed94ebd4ce914beea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4cfeb6eb535d7e4ed94ebd4ce914beea">&#9670;&nbsp;</a></span>simile_colorizeString()</h2>
+<a id="a4c0f402ba1d00c999a731f777a97307e" name="a4c0f402ba1d00c999a731f777a97307e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c0f402ba1d00c999a731f777a97307e">&#9670;&nbsp;</a></span>simile_colorizeString()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -146,6 +147,12 @@ Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">char *&#160;</td>
           <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -172,6 +179,7 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">dst</td><td>The destination buffer for the colorized string </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">src</td><td>The source buffer of the string to be colorized </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>The size of the destination buffer </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">color</td><td>The color to make the string </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mod</td><td>A bitmask of modifiers</td></tr>
   </table>
@@ -184,7 +192,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 5 2022 17:49:09 for simile by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+Generated on Tue Apr 5 2022 18:30:06 for simile by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>
