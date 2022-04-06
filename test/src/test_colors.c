@@ -11,7 +11,7 @@ void test_colors(void) {
 void test_colors_rainbow(void) {
     char dst[32][32] = {0};
    
-    char* msg = " HELLO ";
+    char* msg = " ᛊᛁᛗᛁᛚᛁ ";
 
     for(
         simile_TERM_COLOR c = simile_BLACK;
@@ -32,12 +32,12 @@ void test_colors_nested(void) {
     char dst[2][32] = {0};
     for(int i = 0; i < 8; i++) {
         printf(
-            "%s%s\n",
+            "%s",
             simile_colorizeString(
                 dst[0],
                 simile_colorizeString(
                     dst[0],
-                    "SAMPLE TEXT",
+                    " ᛊᛁᛗᛁᛚᛁ ",
                     32,
                     i,
                     simile_TERM_COLOR_MOD_ULINE 
@@ -45,12 +45,15 @@ void test_colors_nested(void) {
                 32,
                 7-i,
                 simile_TERM_COLOR_MOD_BG
-            ),
+            )
+        );
+        printf(
+            "%s\n",
             simile_colorizeString(
                 dst[1],
                 simile_colorizeString(
                     dst[1],
-                    "SAMPLE TEXT",
+                    " ᛊᛁᛗᛁᛚᛁ ",
                     32,
                     7-i,
                     0
