@@ -3,17 +3,6 @@
 
 #ifdef NOT_WINDOWS
 
-/**
- * Colorize a string using ANSI escape codes
- *
- * @param[out]  dst   The destination buffer for the colorized string
- * @param[in]   src   The source buffer of the string to be colorized
- * @param[in]   size  Size of destination buffer
- * @param[in]   color The color to make the string
- * @param[in]   mod   A bitmask of modifiers
- *
- * @return      A pointer to the destination buffer
- */
 char* simile_colorizeString(char* dst, char* src, int size, simile_TERM_COLOR color, simile_TERM_COLOR_MOD mod) {
 
     char* intermediate = calloc(size, sizeof(char));
@@ -22,31 +11,37 @@ char* simile_colorizeString(char* dst, char* src, int size, simile_TERM_COLOR co
 
     sprintf(
         intermediate, 
-        "\033[%d%sm%s\033[0m",
+        "%s%s%s\033[%d%sm%s",
+        ((mod & simile_TERM_COLOR_MOD_ULINE) == simile_TERM_COLOR_MOD_ULINE)
+        ? "\033[4m" : "",
+        ((mod & simile_TERM_COLOR_MOD_BOLD) == simile_TERM_COLOR_MOD_BOLD)
+        ? "\033[1m" : "",
+        ((mod & simile_TERM_COLOR_MOD_INVRT) == simile_TERM_COLOR_MOD_INVRT)
+        ? "\033[7m" : "",
         colorCode,
         ((mod & simile_TERM_COLOR_MOD_BRIGHT) == simile_TERM_COLOR_MOD_BRIGHT) 
-        ? ";1" 
-        : "",
+        ? ";1" : "",
         src
     );
 
+
+    if(strstr(intermediate, "\033[0m") == NULL) {
+        sprintf(
+            dst,
+            "%s\033[0m",
+            intermediate
+        );
+        return dst;
+    }
+
     strcpy(dst, intermediate);
+
     return dst;
 }
 
 #else
 
-/**
- * Colorize a string using ANSI escape codes
- *
- * @param[out]  dst   The destination buffer for the colorized string
- * @param[in]   src   The source buffer of the string to be colorized
- * @param[in]   color The color to make the string
- * @param[in]   mod   A bitmask of modifiers
- *
- * @return      A pointer to the destination buffer
- */
-char* simile_colorizeString(char* dst, char* src, simile_TERM_COLOR color, simile_TERM_COLOR_MOD mod) {
+char* simile_colorizeString(char* dst, char* src, int size, simile_TERM_COLOR color, simile_TERM_COLOR_MOD mod) {
     strcpy(dst, src);
     return dst;
 }

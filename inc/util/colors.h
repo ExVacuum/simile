@@ -11,20 +11,23 @@
 
 /// Available ANSI terminal colors
 typedef enum {
-    simile_BLACK,
-    simile_RED,
-    simile_GREEN, 
-    simile_YELLOW,
-    simile_BLUE,
-    simile_MAGENTA,
-    simile_CYAN,
-    simile_WHITE
+    simile_BLACK, //!< ANSI Color 0
+    simile_RED, //!< ANSI Color 1
+    simile_GREEN,  //!< ANSI Color 2
+    simile_YELLOW, //!< ANSI Color 3
+    simile_BLUE, //!< ANSI Color 4
+    simile_MAGENTA, //!< ANSI Color 5
+    simile_CYAN, //!< ANSI Color 6
+    simile_WHITE //!< ANSI Color 7
 } simile_TERM_COLOR;
 
 /// Availble ANSI terminal color modifiers
 typedef enum {
-    simile_TERM_COLOR_MOD_BG        = 0b01, //!< Set color background
-    simile_TERM_COLOR_MOD_BRIGHT    = 0b10  //!< Use bright color
+    simile_TERM_COLOR_MOD_BG        = 0b00001,  //!< Set color background
+    simile_TERM_COLOR_MOD_BRIGHT    = 0b00010,  //!< Use bright color
+    simile_TERM_COLOR_MOD_ULINE     = 0b00100,  //!< Underline
+    simile_TERM_COLOR_MOD_BOLD      = 0b01000,  //!< Bold
+    simile_TERM_COLOR_MOD_INVRT     = 0b10000  //!< Inverted Terminal Base Color
 } simile_TERM_COLOR_MOD;
 
 /**
