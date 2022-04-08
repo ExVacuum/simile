@@ -1,0 +1,56 @@
+        -:    0:Source:src/colors.c
+        -:    0:Graph:obj/Debug/colors.gcno
+        -:    0:Data:obj/Debug/colors.gcda
+        -:    0:Runs:4
+        -:    1:/**
+        -:    2: * @file colors.c
+        -:    3: */
+        -:    4:
+        -:    5:#include "../inc/colors.h"
+        -:    6:
+        -:    7:#ifdef NOT_WINDOWS
+        -:    8:
+      288:    9:char* simile_colorizeString(char* dst, char* src, int size, simile_TERM_COLOR color, simile_TERM_COLOR_MOD mod) {
+        -:   10:
+      288:   11:    char* intermediate = calloc(size, sizeof(char));
+        -:   12:                         
+      288:   13:    char colorCode = (((mod & simile_TERM_COLOR_MOD_BG) == simile_TERM_COLOR_MOD_BG) ? 40 : 30) + color;
+        -:   14:
+     1152:   15:    sprintf(
+        -:   16:        intermediate, 
+        -:   17:        "%s%s%s\033[%d%sm%s",
+      288:   18:        ((mod & simile_TERM_COLOR_MOD_ULINE) == simile_TERM_COLOR_MOD_ULINE)
+        -:   19:        ? "\033[4m" : "",
+      288:   20:        ((mod & simile_TERM_COLOR_MOD_BOLD) == simile_TERM_COLOR_MOD_BOLD)
+        -:   21:        ? "\033[1m" : "",
+      288:   22:        ((mod & simile_TERM_COLOR_MOD_INVRT) == simile_TERM_COLOR_MOD_INVRT)
+        -:   23:        ? "\033[7m" : "",
+        -:   24:        colorCode,
+      288:   25:        ((mod & simile_TERM_COLOR_MOD_BRIGHT) == simile_TERM_COLOR_MOD_BRIGHT) 
+        -:   26:        ? ";1" : "",
+        -:   27:        src
+        -:   28:    );
+        -:   29:
+        -:   30:
+      288:   31:    if(strstr(intermediate, "\033[0m") == NULL) {
+      272:   32:        sprintf(
+        -:   33:            dst,
+        -:   34:            "%s\033[0m",
+        -:   35:            intermediate
+        -:   36:        );
+      272:   37:        return dst;
+        -:   38:    }
+        -:   39:
+       16:   40:    strcpy(dst, intermediate);
+        -:   41:
+       16:   42:    return dst;
+        -:   43:}
+        -:   44:
+        -:   45:#else
+        -:   46:
+        -:   47:char* simile_colorizeString(char* dst, char* src, int size, simile_TERM_COLOR color, simile_TERM_COLOR_MOD mod) {
+        -:   48:    strcpy(dst, src);
+        -:   49:    return dst;
+        -:   50:}
+        -:   51:
+        -:   52:#endif

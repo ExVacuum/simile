@@ -1,5 +1,8 @@
+/**
+ * @file colors.c
+ */
 
-#include "../../inc/util/colors.h"
+#include "../inc/colors.h"
 
 #ifdef NOT_WINDOWS
 

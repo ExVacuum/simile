@@ -1,12 +1,18 @@
+#include <criterion/criterion.h>
+#include "../../inc/simile.h"
 
-#include "../inc/test_simile.h"
+void initSimile(void) {
 
-void test_simile(void) {
-    RUN_TEST(test_simile_glVersion);
 }
 
+void finiSimile(void) {
+
+}
+
+TestSuite(simile, .init = initSimile, .fini = finiSimile);
+
 // Test that GL context is created properly
-void test_simile_glVersion(void) {
+Test(simile, glVersion) {
     glfwInit();
 
     glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
@@ -21,5 +27,5 @@ void test_simile_glVersion(void) {
     printf("GL %d.%d\n", GLAD_VERSION_MAJOR(version), GLAD_VERSION_MINOR(version));
     
     glfwTerminate();
-    TEST_ASSERT(version);
+    cr_assert(version);
 }

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['simile_5flogger_0',['simile_Logger',['../structsimile__Logger.html',1,'']]]
+  ['_5fsimile_5fstate_0',['_simile_State',['../struct__simile__State.html',1,'']]]
 ];

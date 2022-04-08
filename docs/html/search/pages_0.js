@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['simile_0',['Simile',['../index.html',1,'']]]
+  ['simile_20ᛊᛁᛗᛁᛚᛁ_0',['Simile ᛊᛁᛗᛁᛚᛁ',['../index.html',1,'']]]
 ];

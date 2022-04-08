@@ -1,17 +1,20 @@
-#include "../inc/test_colors.h"
+#include <criterion/criterion.h>
+#include "../../inc/colors.h"
 
-void test_colors_rainbow(void);
-void test_colors_nested(void);
+void initColors(void) {
 
-void test_colors(void) {
-    RUN_TEST(test_colors_rainbow);
-    RUN_TEST(test_colors_nested);
 }
 
-void test_colors_rainbow(void) {
+void finiColors(void) {
+    
+}
+
+TestSuite(colors, .init = initColors, .fini = finiColors);
+
+Test(colors, rainbow) {
     char dst[32][32] = {0};
    
-    char* msg = " ᛊᛁᛗᛁᛚᛁ ";
+    char* msg = " シミリー ";
 
     for(
         simile_TERM_COLOR c = simile_BLACK;
@@ -20,15 +23,15 @@ void test_colors_rainbow(void) {
     ) {
         for(int mod = 0; mod <= (simile_TERM_COLOR_MOD_BG | simile_TERM_COLOR_MOD_BRIGHT | simile_TERM_COLOR_MOD_ULINE | simile_TERM_COLOR_MOD_BOLD | simile_TERM_COLOR_MOD_INVRT); mod++) {
             printf("%s", simile_colorizeString(dst[mod], msg, 32, c, mod));
-            if(mod % 16 == 15) {
+            if(mod % 4 == 3) {
                 printf("\n");
             }
         }
     }        
-    TEST_PASS();
+    cr_assert(1);
 }
 
-void test_colors_nested(void) {
+Test(colors, nesting) {
     char dst[2][32] = {0};
     for(int i = 0; i < 8; i++) {
         printf(
@@ -37,7 +40,7 @@ void test_colors_nested(void) {
                 dst[0],
                 simile_colorizeString(
                     dst[0],
-                    " ᛊᛁᛗᛁᛚᛁ ",
+                    " シミリー ",
                     32,
                     i,
                     simile_TERM_COLOR_MOD_ULINE 
@@ -53,7 +56,7 @@ void test_colors_nested(void) {
                 dst[1],
                 simile_colorizeString(
                     dst[1],
-                    " ᛊᛁᛗᛁᛚᛁ ",
+                    " シミリー ",
                     32,
                     7-i,
                     0
@@ -65,5 +68,5 @@ void test_colors_nested(void) {
 
         );
     }
-    TEST_PASS();
+    cr_assert(1);
 }

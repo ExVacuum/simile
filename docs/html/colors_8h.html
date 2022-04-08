@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>simile: inc/util/colors.h File Reference</title>
+<title>simile: inc/colors.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="dir_c19b6a841abffe8b6321cb306a20e7b3.html">util</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -72,7 +72,8 @@ $(function() {
   <div class="headertitle"><div class="title">colors.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<div class="textblock"><code>#include &quot;core.h&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 </div>
@@ -95,12 +96,12 @@ Enumerations</h2></td></tr>
 <tr class="memdesc:a30e57b287b41266861ba318f091dd273"><td class="mdescLeft">&#160;</td><td class="mdescRight">Available ANSI terminal colors.  <a href="colors_8h.html#a30e57b287b41266861ba318f091dd273">More...</a><br /></td></tr>
 <tr class="separator:a30e57b287b41266861ba318f091dd273"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99c38cc4d6c73fd2a8264a787a630d0b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0b">simile_TERM_COLOR_MOD</a> { <br />
-&#160;&#160;<a class="el" href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0ba3ac2912f7fd17816d0c3aa5008628142">simile_TERM_COLOR_MOD_BG</a> = 0b00001
-, <a class="el" href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0baf0e83fd942764f26f35585844a0446ff">simile_TERM_COLOR_MOD_BRIGHT</a> = 0b00010
-, <a class="el" href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0ba95678161cfa61086c1f40126e862b2a2">simile_TERM_COLOR_MOD_ULINE</a> = 0b00100
-, <a class="el" href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0babdd38daee2c9d21444ad863dcd3e05ab">simile_TERM_COLOR_MOD_BOLD</a> = 0b01000
+&#160;&#160;<a class="el" href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0ba3ac2912f7fd17816d0c3aa5008628142">simile_TERM_COLOR_MOD_BG</a> = 1 &lt;&lt; 0
+, <a class="el" href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0baf0e83fd942764f26f35585844a0446ff">simile_TERM_COLOR_MOD_BRIGHT</a> = 1 &lt;&lt; 1
+, <a class="el" href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0ba95678161cfa61086c1f40126e862b2a2">simile_TERM_COLOR_MOD_ULINE</a> = 1 &lt;&lt; 2
+, <a class="el" href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0babdd38daee2c9d21444ad863dcd3e05ab">simile_TERM_COLOR_MOD_BOLD</a> = 1 &lt;&lt; 3
 , <br />
-&#160;&#160;<a class="el" href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0ba96b651a1deff22be7e965138f4933c10">simile_TERM_COLOR_MOD_INVRT</a> = 0b10000
+&#160;&#160;<a class="el" href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0ba96b651a1deff22be7e965138f4933c10">simile_TERM_COLOR_MOD_INVRT</a> = 1 &lt;&lt; 4
 <br />
  }</td></tr>
 <tr class="memdesc:a99c38cc4d6c73fd2a8264a787a630d0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Availble ANSI terminal color modifiers.  <a href="colors_8h.html#a99c38cc4d6c73fd2a8264a787a630d0b">More...</a><br /></td></tr>
@@ -238,7 +239,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 6 2022 00:24:45 for simile by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+Generated on Fri Apr 8 2022 04:15:20 for simile by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>
