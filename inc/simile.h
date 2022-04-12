@@ -1,7 +1,6 @@
 #include <stdio.h>
-#include "../libs/glad/inc/glad/gl.h"
-#include <GLFW/glfw3.h>
-
+#include "glad/gl.h"
+#include "GLFW/glfw3.h"
 
 typedef struct _simile_State {
     

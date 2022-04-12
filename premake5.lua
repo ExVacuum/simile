@@ -9,18 +9,25 @@ project("simile")
     language("C")
     targetdir("bin/%{cfg.buildcfg}")
     libdirs({
-        "libs"
+        "./libs/**"
+    })
+    includedirs({
+        "./libs/glad/inc",
+        "./libs/glfw/include",
+        "./libs/libcyaml/include/"
     })
 
     links({
+        "m",
         "gl",
-        "glad",
-        "glfw"
+        "glfw3",
+        "cyaml"
     })
 
     files({
-        "inc/**.h",
-        "src/**.c"
+        "./libs/glad/src/**.c",
+        "./inc/**.h",
+        "./src/**.c"
     })
 
     filter("system:not windows")
@@ -58,28 +65,38 @@ project("SimileTests")
     language("C")
     targetdir("test/bin/%{cfg.buildcfg}")
     libdirs({
-        "libs/**"
+        "./libs/**"
+    })
+    includedirs({
+        "./libs/glad/src/**.c",
+        "./libs/glad/inc",
+        "./libs/glfw/include",
+        "./libs/libcyaml/include/"
     })
 
     links({
+        "m",
         "criterion",
         "simile",
-        "glad",
-        "glfw"
+        "glfw3",
+        "cyaml"
     })
 
     files({
-        "test/inc/**.h",
-        "test/src/**.c"
+        "./test/inc/**.h",
+        "./test/src/**.c"
     })
 
-    objdir("test/obj")
+    objdir("./test/obj")
 
     postbuildcommands({
         "%{cfg.buildtarget.relpath}"
     })
 
     filter({ "system:linux", "action:gmake or action:gmake2" })
+        postbuildcommands({
+            "gcovr"
+        })
         buildoptions({
             "-fprofile-arcs",
             "-ftest-coverage"

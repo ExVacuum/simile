@@ -1,7 +1,7 @@
-# CCLS cache
+# CCLS
     
 .ccls-cache/**
-
+.ccls
 
 # npm-related files (mostly for language server packages)
     

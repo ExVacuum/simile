@@ -29,3 +29,7 @@ Test(simile, glVersion) {
     glfwTerminate();
     cr_assert(version);
 }
+
+Test(simile, hello) {
+    hello();
+}
