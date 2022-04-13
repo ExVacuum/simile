@@ -7,6 +7,7 @@ workspace("simile")
 project("simile")
     kind("StaticLib")
     language("C")
+    cdialect("C11")
     targetdir("bin/%{cfg.buildcfg}")
     libdirs({
         "./libs/**"
@@ -14,14 +15,13 @@ project("simile")
     includedirs({
         "./libs/glad/inc",
         "./libs/glfw/include",
-        "./libs/libcyaml/include/"
     })
 
     links({
         "m",
         "gl",
         "glfw3",
-        "cyaml"
+        "yaml"
     })
 
     files({
@@ -63,15 +63,14 @@ project("simile")
 project("SimileTests")
     kind("ConsoleApp")
     language("C")
+    cdialect("C11")
     targetdir("test/bin/%{cfg.buildcfg}")
     libdirs({
         "./libs/**"
     })
     includedirs({
-        "./libs/glad/src/**.c",
         "./libs/glad/inc",
         "./libs/glfw/include",
-        "./libs/libcyaml/include/"
     })
 
     links({
@@ -79,7 +78,7 @@ project("SimileTests")
         "criterion",
         "simile",
         "glfw3",
-        "cyaml"
+        "yaml"
     })
 
     files({

@@ -1,6 +1,3 @@
-[submodule "libs/libcyaml"]
-	path = libs/libcyaml
-	url = git@github.com:ExVacuum/libcyaml.git
 [submodule "libs/glfw"]
 	path = libs/glfw
 	url = git@github.com:ExVacuum/glfw.git

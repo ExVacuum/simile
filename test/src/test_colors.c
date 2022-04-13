@@ -2,16 +2,15 @@
 #include "../../inc/colors.h"
 
 void initColors(void) {
-
 }
 
 void finiColors(void) {
-    
 }
 
 TestSuite(colors, .init = initColors, .fini = finiColors);
 
 Test(colors, rainbow) {
+    char result[1024] = {0};
     char dst[32][32] = {0};
    
     char* msg = " シミリー ";
@@ -22,19 +21,20 @@ Test(colors, rainbow) {
         c++
     ) {
         for(int mod = 0; mod <= (simile_TERM_COLOR_MOD_BG | simile_TERM_COLOR_MOD_BRIGHT | simile_TERM_COLOR_MOD_ULINE | simile_TERM_COLOR_MOD_BOLD | simile_TERM_COLOR_MOD_INVRT); mod++) {
-            printf("%s", simile_colorizeString(dst[mod], msg, 32, c, mod));
+            sprintf(result, "%s", simile_colorizeString(dst[mod], msg, 32, c, mod));
             if(mod % 4 == 3) {
-                printf("\n");
+                sprintf(result, "\n");
             }
         }
     }        
-    cr_assert(1);
 }
 
 Test(colors, nesting) {
+    char result[1024] = {0};
     char dst[2][32] = {0};
     for(int i = 0; i < 8; i++) {
-        printf(
+        sprintf(
+            result,
             "%s",
             simile_colorizeString(
                 dst[0],
@@ -50,7 +50,8 @@ Test(colors, nesting) {
                 simile_TERM_COLOR_MOD_BG
             )
         );
-        printf(
+        sprintf(
+            result,
             "%s\n",
             simile_colorizeString(
                 dst[1],
