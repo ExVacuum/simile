@@ -13,28 +13,31 @@ project("simile")
         "./libs/**"
     })
     includedirs({
-        "./libs/glad/inc",
-        "./libs/glfw/include",
+        "./libs/glad/inc/",
+        "./libs/glfw/include/",
+        "./libs/libcyaml/include/",
+        "./libs/base64/inc/"
     })
-
     links({
         "m",
         "gl",
         "glfw3",
+        "cyaml",
         "yaml"
     })
-
     files({
         "./libs/glad/src/**.c",
+        "./libs/base64/src/**.c",
         "./inc/**.h",
         "./src/**.c"
     })
-
+    defines({
+        "PROJECT_ROOT_DIR=%{prj.location}"
+    })
     filter("system:not windows")
         defines({
             "NOT_WINDOWS"
         })
-
     filter("configurations:Debug")
         defines({
             "DEBUG"
@@ -43,7 +46,6 @@ project("simile")
         postbuildcommands({
             "doxygen"
         })
-
     filter({ "system:linux", "configurations:Debug", "action:gmake or action:gmake2" })
         buildoptions({
             "-fprofile-arcs",
@@ -53,7 +55,6 @@ project("simile")
             "-lgcov",
             "--coverage"
         })
-
     filter("configurations:Release")
         defines({
             "NDEBUG"
@@ -65,33 +66,34 @@ project("SimileTests")
     language("C")
     cdialect("C11")
     targetdir("test/bin/%{cfg.buildcfg}")
+    objdir("./test/obj")
     libdirs({
         "./libs/**"
     })
     includedirs({
         "./libs/glad/inc",
         "./libs/glfw/include",
+        "./libs/libcyaml/include/",
+        "./libs/base64/inc/"
     })
-
     links({
         "m",
         "criterion",
         "simile",
         "glfw3",
+        "cyaml",
         "yaml"
     })
-
     files({
         "./test/inc/**.h",
         "./test/src/**.c"
     })
-
-    objdir("./test/obj")
-
     postbuildcommands({
         "%{cfg.buildtarget.relpath}"
     })
-
+    defines({
+        "PROJECT_ROOT_DIR=\"%{cfg.buildtarget.directory}/../..\""
+    })
     filter({ "system:linux", "action:gmake or action:gmake2" })
         postbuildcommands({
             "gcovr"
@@ -104,6 +106,4 @@ project("SimileTests")
             "-lgcov",
             "--coverage"
         })
-
-
 

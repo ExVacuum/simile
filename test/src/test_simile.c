@@ -24,12 +24,7 @@ Test(simile, glVersion) {
     glfwMakeContextCurrent(window);
 
     int version = gladLoadGL(glfwGetProcAddress);
-    printf("GL %d.%d\n", GLAD_VERSION_MAJOR(version), GLAD_VERSION_MINOR(version));
     
     glfwTerminate();
     cr_assert(version);
-}
-
-Test(simile, hello) {
-    hello();
 }

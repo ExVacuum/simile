@@ -20,4 +20,5 @@ obj
 
 Makefile
 *.make
+compile_commands.json
  
