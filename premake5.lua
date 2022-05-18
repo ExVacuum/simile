@@ -6,30 +6,18 @@ workspace("simile")
 
 project("simile")
     kind("StaticLib")
-    language("C")
-    cdialect("C11")
+    language("C++")
     targetdir("bin/%{cfg.buildcfg}")
     libdirs({
         "./libs/**"
     })
     includedirs({
-        "./libs/glad/inc/",
-        "./libs/glfw/include/",
-        "./libs/libcyaml/include/",
-        "./libs/base64/inc/"
     })
     links({
-        "m",
-        "gl",
-        "glfw3",
-        "cyaml",
-        "yaml"
     })
     files({
-        "./libs/glad/src/**.c",
-        "./libs/base64/src/**.c",
-        "./inc/**.h",
-        "./src/**.c"
+        "./inc/**.hpp",
+        "./src/**.cpp"
     })
     defines({
         "PROJECT_ROOT_DIR=%{prj.location}"
@@ -63,30 +51,20 @@ project("simile")
 
 project("SimileTests")
     kind("ConsoleApp")
-    language("C")
-    cdialect("C11")
+    language("C++")
     targetdir("test/bin/%{cfg.buildcfg}")
     objdir("./test/obj")
     libdirs({
         "./libs/**"
     })
     includedirs({
-        "./libs/glad/inc",
-        "./libs/glfw/include",
-        "./libs/libcyaml/include/",
-        "./libs/base64/inc/"
     })
     links({
-        "m",
-        "criterion",
-        "simile",
-        "glfw3",
-        "cyaml",
-        "yaml"
+        "criterion"
     })
     files({
-        "./test/inc/**.h",
-        "./test/src/**.c"
+        "./test/inc/**.hpp",
+        "./test/src/**.cpp"
     })
     postbuildcommands({
         "%{cfg.buildtarget.relpath}"
