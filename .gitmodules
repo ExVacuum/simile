@@ -4,3 +4,6 @@
 [submodule "libs/libcyaml"]
 	path = libs/libcyaml
 	url = git@github.com:ExVacuum/libcyaml.git
+[submodule "libs/spdlog"]
+	path = libs/spdlog
+	url = https://github.com/gabime/spdlog.git

@@ -12,8 +12,10 @@ project("simile")
         "./libs/**"
     })
     includedirs({
+        "./inc/"
     })
     links({
+        "spdlog"
     })
     files({
         "./inc/**.hpp",

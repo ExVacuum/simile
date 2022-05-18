@@ -1,1 +1,36 @@
-[]
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-DPROJECT_ROOT_DIR=.",
+      "-DNOT_WINDOWS",
+      "-DDEBUG",
+      "-Iinc",
+      "-g",
+      "-fprofile-arcs",
+      "-ftest-coverage",
+      "-c",
+      "-o",
+      "obj/Debug/simile.o",
+      "src/simile.cpp"
+    ],
+    "directory": "/mass/projects/autumn-sandcastle/libs/simile",
+    "file": "/mass/projects/autumn-sandcastle/libs/simile/src/simile.cpp",
+    "output": "/mass/projects/autumn-sandcastle/libs/simile/obj/Debug/simile.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-DPROJECT_ROOT_DIR=\"test/bin/Debug/../..\"",
+      "-fprofile-arcs",
+      "-ftest-coverage",
+      "-c",
+      "-o",
+      "test/obj/Debug/test_simile.o",
+      "test/src/test_simile.cpp"
+    ],
+    "directory": "/mass/projects/autumn-sandcastle/libs/simile",
+    "file": "/mass/projects/autumn-sandcastle/libs/simile/test/src/test_simile.cpp",
+    "output": "/mass/projects/autumn-sandcastle/libs/simile/test/obj/Debug/test_simile.o"
+  }
+]
