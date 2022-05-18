@@ -12,9 +12,11 @@ project("simile")
         "./libs/**"
     })
     includedirs({
-        "./inc/"
+        "./inc/",
+        "./libs/spdlog/include/"
     })
     links({
+        "gcov",
         "spdlog"
     })
     files({
@@ -38,11 +40,9 @@ project("simile")
         })
     filter({ "system:linux", "configurations:Debug", "action:gmake or action:gmake2" })
         buildoptions({
-            "-fprofile-arcs",
-            "-ftest-coverage"
+            "--coverage"
         })
         linkoptions({
-            "-lgcov",
             "--coverage"
         })
     filter("configurations:Release")
@@ -60,8 +60,12 @@ project("SimileTests")
         "./libs/**"
     })
     includedirs({
+        "./inc/",
+        "./libs/spdlog/include/"
     })
     links({
+        "gcov",
+        "simile",
         "criterion"
     })
     files({
@@ -79,11 +83,9 @@ project("SimileTests")
             "gcovr"
         })
         buildoptions({
-            "-fprofile-arcs",
-            "-ftest-coverage"
+            "--coverage"
         })
         linkoptions({
-            "-lgcov",
             "--coverage"
         })
 

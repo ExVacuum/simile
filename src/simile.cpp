@@ -2,6 +2,6 @@
 
 namespace simile {
     void helloWorld(void) {
-        std::cout << "Hello, world!" << std::endl;
+        spdlog::log(spdlog::level::info, "Hello, world!");
     }
 }

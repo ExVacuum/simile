@@ -6,6 +6,7 @@
       "-DNOT_WINDOWS",
       "-DDEBUG",
       "-Iinc",
+      "-Ilibs/spdlog/include",
       "-g",
       "-fprofile-arcs",
       "-ftest-coverage",
